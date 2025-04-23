@@ -1,0 +1,17 @@
+id: etl-pipeline
+namespace: portfolio.project1
+
+tasks:
+  - id: python
+    type: io.kestra.plugin.scripts.python.Commands
+    namespaceFiles:
+      enabled: true
+      include:
+        - api.py
+    beforeCommands:
+      - pip install requests pandas 
+    commands:
+      - python api.py
+    outputFiles:
+      - sec_company_data.csv
+      
