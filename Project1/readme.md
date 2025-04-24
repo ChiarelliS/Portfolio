@@ -1,7 +1,7 @@
 # Project 1 - ETL/ELT pipeline
 This is a data engineering project about U.S. companies financial data. 
 The data is fetched for the last 5 financial years. The following pipeline is orchestrated using Kestra.
-You can get the yml file with the kestra workflow [here](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/workflow.yml)
+You can get the yml file with the kestra workflow [here](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/workflow.yml). To set up gcp in kestra store your ssh key in the kv store, then execute the following flows (modify project id, bucket name, dataset value according to your gcp project features): [gcp_kv_flow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flows/gcp_kv.yml), [gcp_setup_flow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flows/gcp_setup.yml).
 * Company data extraction from API (Python code)
 * Creation of a table to store our data in BigQuery
 * Upload of the data to the gcs
