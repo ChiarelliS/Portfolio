@@ -1,4 +1,4 @@
-# [Welcome to my Portfolio]{blue}
+# [Welcome to my Portfolio]{#blue}
 ## Here I add some projects that showcase my skills in data engineering / analytics engineering
 
 # Project 1 - ETL/ELT pipeline
