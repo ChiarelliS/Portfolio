@@ -9,8 +9,8 @@ You can get the yml file with the kestra workflow [here](https://github.com/Chia
 * Creation of some dashboard to get interesting insights from our data
 
 NB to run kestra on your local machine run in your terminal:\
-`docker-compose build # to build the docker-compose image`\
-`docker-compose up # to create the docker container`\
+`docker-compose build` to build the docker-compose image\
+`docker-compose up` to create the docker container\
 Then you can access kestra UI from `localhost:8080`
 
 The financial data fetched consists of data from companies' annual 10-k forms.
