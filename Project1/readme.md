@@ -13,7 +13,10 @@ NB **to run kestra on your local machine** run in your terminal:\
 `docker-compose up` to create the docker container\
 Then you can access kestra UI from `localhost:8080`
 
-**To set up gcp in kestra** store your ssh key in the kv store, then execute the following flows (modify project id, bucket name, dataset value according to your gcp project features): [gcp_kv_flow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flows/gcp_kv.yml), [gcp_setup_flow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flows/gcp_setup.yml).
+**To set up gcp in kestra**:
+* open your working namespace in kestra
+* store your ssh key in the kv store
+* then execute the following flows (modify project id, bucket name, dataset value according to your gcp project features): [gcp_kv_flow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flows/gcp_kv.yml), [gcp_setup_flow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flows/gcp_setup.yml).
 
 The financial data fetched consists of data from companies' annual 10-k forms.
    In this project I am going to extract the total revenue of each company in the last 5 financial years, and I am going to create a csv file containing the following informations about each company:
