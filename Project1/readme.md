@@ -8,9 +8,9 @@ You can get the yml file with the kestra workflow [here](https://github.com/Chia
 * Some data transformation using dbt from the cloud
 * Creation of some dashboard to get interesting insights from our data
 
-NB to run kestra on your local machine run in your terminal:
-`docker-compose build # to build the docker-compose image`
-`docker-compose up # to create the docker container`
+NB to run kestra on your local machine run in your terminal:\
+`docker-compose build # to build the docker-compose image`\
+`docker-compose up # to create the docker container`\
 Then you can access kestra UI from `localhost:8080`
 
 The financial data fetched consists of data from companies' annual 10-k forms.\ In this project I am going to extract the total revenue of each company in the last 5 financial years, and I am going to create a csv file containing the following informations about each company:
