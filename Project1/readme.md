@@ -35,6 +35,14 @@ To access each company data is required the CIK of the company. An updated list 
 To extract the data I created a [python script](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/api.py).
 
 
+# TODO
+1. WATCH DBT VIDEOS AND WORK WITH DBT
+2. ADD DBT WORKFLOW
+3. ORCHESTRATE THE WORKFLOWS
+4. CREATE DASHBOARDS AND PUBLISH DOES HERE
+
+
+
 ## DATA TRANSFORMATION AND DATA VISUALIZATION
 # - Using dbt to transform our data that is in the datawarehouse in the cloud
 # - Creating some interesting dashboards 
