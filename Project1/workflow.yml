@@ -1,0 +1,83 @@
+id: etl_gcp
+namespace: portfolio.project1
+description: |
+ 
+variables:
+  file: "sec_company_data.csv"
+  gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/{{vars.file}}"
+  table: "{{kv('GCP_DATASET')}}.sec_company_data"
+
+tasks:
+
+- id: set_label
+  type: io.kestra.plugin.core.execution.Labels
+  labels:
+    file: "{{vars.file}}"
+    source: "sec_api"
+- id: API_data_extraction
+  type: io.kestra.plugin.scripts.python.Commands
+  namespaceFiles:
+      enabled: true
+      include:
+        - api.py
+  beforeCommands:
+      - pip install requests pandas 
+  commands:
+      - python api.py
+  outputFiles:
+      - sec_company_data.csv
+
+- id: data_upload_to_GCS
+  type: io.kestra.plugin.gcp.gcs.Upload
+  from: "{{outputs.python.outputFiles['sec_company_data.csv']}}"
+  to: "{{render(vars.gcs_file)}}"
+
+
+- id: BQ_create_table
+  type: io.kestra.plugin.gcp.bigquery.Query
+  sql: |
+    CREATE TABLE IF NOT EXISTS `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.sec_company_data`
+    (
+        name STRING OPTIONS (description = 'Company name'),
+        ticker STRING OPTIONS (description = 'Stock ticker symbol'),
+        cik STRING OPTIONS (description = 'Central Index Key used by the SEC'),
+        form STRING OPTIONS (description = 'SEC form type, e.g., 10-K'),
+        frame STRING OPTIONS (description = 'Fiscal time frame, e.g., CY2023'),
+        val NUMERIC OPTIONS (description = 'Reported financial value'),
+        unit STRING OPTIONS (description = 'Unit of the financial value, e.g., USD'),
+        street1 STRING OPTIONS (description = 'Primary address line'),
+        street2 STRING OPTIONS (description = 'Secondary address line'),
+        city STRING OPTIONS (description = 'City'),
+        zipCode STRING OPTIONS (description = 'ZIP or postal code'),
+        country STRING OPTIONS (description = 'Country'),
+        stateOrCountry STRING OPTIONS (description = 'State or country code'),
+        isForeignLocation BOOLEAN OPTIONS (description = 'Indicates if the location is foreign'),
+        year INTEGER OPTIONS (description = 'Calendar year of the report')
+
+    )
+    CLUSTER BY cik;
+
+- id: BQ_load_data
+  type: io.kestra.plugin.gcp.bigquery.Load
+  from: "{{render('gs://etl-kestra-bucket/sec_company_data.csv')}}"
+  destinationTable: "{{vars.table}}"
+  format: CSV
+  csvOptions:
+    skipLeadingRows: 1  # Skip the header row in the CSV file
+    fieldDelimiter: ','  # Define the delimiter (comma for CSV)
+    quote: '"'  # Quote character for handling text fields
+  writeDisposition: WRITE_APPEND  # Change to WRITE_TRUNCATE if you want to overwrite
+  autodetect: true  # Let BigQuery auto-detect the schema based on the CSV file
+
+- id: purge_files
+  type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
+  description: If you'd like to explore Kestra outputs, disable it.
+  disabled: false
+
+pluginDefaults:
+  - type: io.kestra.plugin.gcp
+    values:
+      serviceAccount: "{{kv('GCP_CREDS')}}"
+      projectId: "{{kv('GCP_PROJECT_ID')}}"
+      location: "{{kv('GCP_LOCATION')}}"
+      bucket: "{{kv('GCP_BUCKET_NAME')}}"
