@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: staging
+    database: "{{ env_var('DBT_DATABASE', 'etl-pipeline-457715') }}"
+    schema: "{{ env_var('DBT_SCHEMA', 'sec_company_data') }}"
+      # loaded_at_field: record_loaded_at
+    tables:
+      - name: sec_company_data_ext
+
+models:
+    - name: stg_company_data
+      description: 
+        Details of the companies retrieved from SEC EDGAR API. This table contains informations about the address, full name, CIK of each company. 
+    - name: stg_revenue_data
+      description: 
+        Details of the total yearly revenue of each company. This table contains the name of the form retrieved from SEC EDGAR API, the year, the total revenue, and the unit of currency. The total revenue was retrieved for the latest 5 financial years of each company.
+        
