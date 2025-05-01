@@ -33,7 +33,14 @@ The data extraction and data loading **workflow** is orchestrated using **Kestra
 3.  then execute the following flows (modify project id, bucket name, dataset value according to your gcp project features): [gcp_kv_flow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flows/gcp_kv.yml), [gcp_setup_flow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flows/gcp_setup.yml).
 
 ### Python API script
+
+
 Add the [python script](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/api.py) to your Kestra workflow folder and execute the [workflow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flow.yaml)
+
+## Data Transformation with dbt
+
+
+[Here](https://github.com/ChiarelliS/Portfolio/tree/main/Project1/dbt) you can find the models and DAG of the transformation stage.
 
 
 
