@@ -1,13 +1,14 @@
-# Project 1 - ETL/ELT pipeline
+## Automated Financial Data Pipeline from SEC Filings to Cloud Warehouse
+
+**Description:**
+This project focuses on building an automated data engineering pipeline to extract, load, and transform financial data submitted by companies to the U.S. Securities and Exchange Commission (SEC). 
+The pipeline retrieves company information and financial statements—specifically total yearly revenue for the past five years—using the SEC’s EDGAR API. 
+The extracted data is loaded into cloud storage (GCS) and to cloud data warehouse (BigQuery), where it is cleaned, structured, and transformed using dbt Cloud to create analytics-ready tables. 
+The entire workflow is orchestrated using Kestra to ensure scalability, automation, and reliability.
+
+
 ***
-This is a **data engineering project** about U.S. companies financial data. 
-The data is fetched for the last 5 financial years. The following pipeline is orchestrated using Kestra.
-You can get the yml file with the kestra workflow [here](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/workflow.yml). 
-* Company data extraction from API (Python code)
-* Creation of a table to store our data in BigQuery
-* Upload of the data to the gcs
-* Some data transformation using dbt from the cloud
-* Creation of some dashboard to get interesting insights from our data
+
 
 NB **to run kestra on your local machine** run in your terminal:\
 `docker-compose build` to build the docker-compose image\
