@@ -2,9 +2,8 @@ version: 2
 
 sources:
   - name: staging
-    database: "{{ env_var('DBT_DATABASE', 'etl-pipeline-457715') }}"
-    schema: "{{ env_var('DBT_SCHEMA', 'sec_company_data') }}"
-      # loaded_at_field: record_loaded_at
+    database: "{{ env_var('DBT_DATABASE', ${BQ_DATABASE_NAME}) }}"
+    schema: "{{ env_var('DBT_SCHEMA', ${BQ_SCHEMA_NAME}) }}"
     tables:
       - name: sec_company_data_ext
 
