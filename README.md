@@ -1,20 +1,33 @@
-# Welcome to my Portfolio
-## Here I add some projects that showcase my skills in data engineering / analytics engineering
+# 👋 Welcome to My Data Engineering Portfolio
 
-# Project 1 - ETL/ELT pipeline
+##  Overview
+### This repository showcases a collection of projects that demonstrate my skills in **data engineering** and **analytics engineering**. 
+---
 
-# For this project I will
-* extract data from API 
-* load data to a datawarehouse
-* transform data using dbt 
+## :scroll: [Project 1 – Automated Financial Data Pipeline from SEC Filings to Cloud Warehouse](https://github.com/ChiarelliS/Portfolio/tree/main/Project1)
 
-## DATA EXTRACTION AND DATA LOADING
-# For this part of the project I will create a kestra pipeline to orchestrate the workflow.
-# Creating a Kestra workflow allows me to:
-* schedule the pipeline to run when new data are published (daily, monthly)
-* receive slack messages in case of errors/issues in the workflow
-* load the data directly to GCP using the secret keys feature of kestra to store my SSH keys.
+### Project Summary
+An end-to-end ELT pipeline that automates the extraction of financial data submitted by public companies to the U.S. Securities and Exchange Commission (SEC). The pipeline processes total yearly revenue over the last five years and transforms the raw data into structured, analysis-ready tables in a cloud data warehouse.
 
-## DATA TRANSFORMATION AND DATA VISUALIZATION
-* Using dbt to transform our data that is in the datawarehouse in the cloud
-* Creating some interesting dashboards 
+### 🔧 Tech Stack
+- **Programming Language:** Python  
+- **Data Source:** [SEC EDGAR API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)  
+- **Orchestration Tool:** [Kestra](https://kestra.io/)  
+- **Transformation Tool:** [dbt Cloud](https://www.getdbt.com/)  
+- **Storage:** Cloud Data Warehouse (Google Cloud BigQuery)
+
+### 📈 Skills Demonstrated
+- Building scalable ELT pipelines  
+- API data extraction and ingestion  
+- Workflow orchestration  
+- Data modeling and transformation with dbt  
+- Cloud data warehousing concepts
+
+---
+
+## 📫 Contact  
+Feel free to connect or reach out to discuss data projects or opportunities:  
+**Sara Chiarelli**  
+[LinkedIn](www.linkedin.com/in/sara-chiarelli-397167276)  
+
+
