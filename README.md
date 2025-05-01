@@ -11,10 +11,10 @@ An end-to-end ELT pipeline that automates the extraction of financial data submi
 
 ### 🔧 Tech Stack
 - **Programming Language:** Python  
-- **Data Source:** [SEC EDGAR API](https://www.sec.gov/edgar.shtml)  
+- **Data Source:** [SEC EDGAR API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)  
 - **Orchestration Tool:** [Kestra](https://kestra.io/)  
 - **Transformation Tool:** [dbt Cloud](https://www.getdbt.com/)  
-- **Storage:** Cloud Data Warehouse (BigQuery)
+- **Storage:** Cloud Data Warehouse (Google Cloud BigQuery)
 
 ### 📈 Skills Demonstrated
 - Building scalable ELT pipelines  
