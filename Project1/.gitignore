@@ -2,8 +2,5 @@
 workflow.txt
 flow.yaml
 dbt.txt
-dbt/target/
-dbt/dbt_packages/
-dbt/logs/
-dbt/dbt-dag.png
+dbt/packages/
 dbt/models/.env
