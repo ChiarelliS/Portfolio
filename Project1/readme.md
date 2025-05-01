@@ -35,12 +35,12 @@ The data extraction and data loading **workflow** is orchestrated using **Kestra
 ### Python API script
 
 
-Add the [python script](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/api.py) to your Kestra workflow folder and execute the [workflow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flow.yaml)
+Add the [python script](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/api.py) to your Kestra workflow folder and execute the [workflow](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/flow.yaml).
 
 ## Data Transformation with dbt
 
 
-[Here](https://github.com/ChiarelliS/Portfolio/tree/main/Project1/dbt) you can find the models and DAG of the transformation stage.
+[Here](https://github.com/ChiarelliS/Portfolio/tree/main/Project1/dbt) you can find the models and DAG of the transformation stage using dbt Cloud.
 
 
 
