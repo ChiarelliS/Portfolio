@@ -1,6 +1,8 @@
 ## Automated Financial Data Pipeline from SEC Filings to Cloud Warehouse
 
 **Description:**
+
+
 This project focuses on building an automated data engineering pipeline to extract, load, and transform financial data submitted by companies to the U.S. Securities and Exchange Commission (SEC). 
 The pipeline retrieves company information and financial statements—specifically total yearly revenue for the past five years—using the SEC’s EDGAR API. 
 The extracted data is loaded into cloud storage (GCS) and to cloud data warehouse (BigQuery), where it is cleaned, structured, and transformed using dbt Cloud to create analytics-ready tables. 
