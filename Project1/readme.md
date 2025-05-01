@@ -1,4 +1,5 @@
 # Project 1 - ETL/ELT pipeline
+***
 This is a **data engineering project** about U.S. companies financial data. 
 The data is fetched for the last 5 financial years. The following pipeline is orchestrated using Kestra.
 You can get the yml file with the kestra workflow [here](https://github.com/ChiarelliS/Portfolio/blob/main/Project1/workflow.yml). 
