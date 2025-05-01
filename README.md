@@ -28,7 +28,7 @@ An end-to-end ELT pipeline that automates the extraction of financial data submi
 
 ## 📫 Contact  
 Feel free to connect or reach out to discuss data projects or opportunities:  
-**[Sara Chiarelli]**  
+**Sara Chiarelli**  
 [LinkedIn](www.linkedin.com/in/sara-chiarelli-397167276)  
 
 
