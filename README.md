@@ -1,7 +1,7 @@
 # 👋 Welcome to My Data Engineering Portfolio
 
 ##  Overview
-This repository showcases a collection of projects that demonstrate my skills in **data engineering** and **analytics engineering**. 
+### This repository showcases a collection of projects that demonstrate my skills in **data engineering** and **analytics engineering**. 
 ---
 
 ## :scroll: [Project 1 – Automated Financial Data Pipeline from SEC Filings to Cloud Warehouse](https://github.com/ChiarelliS/Portfolio/tree/main/Project1)
