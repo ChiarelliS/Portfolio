@@ -1,8 +1,7 @@
 # 👋 Welcome to My Data Engineering Portfolio
 
 ##  Overview
-This repository showcases a collection of projects that demonstrate my skills in **data engineering** and **analytics engineering**. Each project is designed to reflect real-world scenarios and uses modern tools and best practices in the data ecosystem.
-
+This repository showcases a collection of projects that demonstrate my skills in **data engineering** and **analytics engineering**. 
 ---
 
 ## :scroll: Project 1 – Automated Financial Data Pipeline from SEC Filings to Cloud Warehouse
