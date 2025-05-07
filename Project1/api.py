@@ -44,7 +44,7 @@ def main():
             if not revenues or "units" not in revenues or "USD" not in revenues["units"]:
                 continue
 
-            # 🧠 Fetch company location info for each company
+            # Fetch company location info for each company
             country_url = f"https://data.sec.gov/submissions/CIK{cik_str}.json"
             country_data_request = requests.get(country_url, headers=headers)
             country_data_request.raise_for_status()
@@ -58,7 +58,7 @@ def main():
                     entry.get('fp') == 'FY' and
                     ('Q' not in entry.get('frame', '')) and
                     entry.get('frame') and
-                    (current_year - 5) <= int(entry.get('frame')[2:]) <= current_year  # Correct slicing here
+                    (current_year - 5) <= int(entry.get('frame')[2:]) <= current_year  
                 ):
                     row = {
                         'name': df.loc[c-1, 'name'],
