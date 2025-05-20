@@ -1,6 +1,4 @@
 import requests
-import pandas as pd
-import xmltodict
 import xml.etree.ElementTree as ET 
 import json
 import os
@@ -8,8 +6,6 @@ import dlt
 from dlt.sources.helpers.rest_client import RESTClient
 
 
-
-# Get the secret
 os.environ["DESTINATION__BIGQUERY__CREDENTIALS"] = os.environ.get("SERVICE_ACCOUNT_KEY")
 
 
@@ -35,11 +31,6 @@ pipeline = dlt.pipeline(
     destination='bigquery', # <--- to run pipeline in production
     dataset_name='eurostat_prod'
 )
-
-
-
-
-
 
 def extract(url, file_name):
     
@@ -77,8 +68,6 @@ def make_eu_prod_resource(query_params, df_code):
 
     return eu_prod
 
-
-
 def main(url_catalogue, file_name, dataset_name):
     extract(url_catalogue, file_name)
     table_codes = parse_xml(file_name,dataset_name)
@@ -89,8 +78,6 @@ def main(url_catalogue, file_name, dataset_name):
         print(f"Loaded dataset: {code}")
         print(load_info)
 
-
-   
 
 if __name__ == '__main__':
     main(url_catalogue,file_name,dataset_name)
