@@ -1,5 +1,5 @@
-## MONTHLY INDUSTRY DATA EXTRACTION FROM EUROSTAT DATABASE
-### :factory: **work in progress**
+## :factory: Monthly Industry Data Extraction From Eurostat Database
+### **work in progress**
 
 
 This project aims to create a pipeline to collect industry data from the [Eurostat database](https://ec.europa.eu/eurostat/data/database) each month, clean the data, upload the tables to cloud storage, and query the data to perform some transformations and prepare the tables for BI.
