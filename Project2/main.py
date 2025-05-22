@@ -15,6 +15,8 @@ file_name = 'eurostat_db.xml'
 
 dataset_name = 'Industry'
 
+country_list = ["DE", "FR", "IT"]
+
 query_params = {
     "format": "JSON",
     "lang" : "EN",
@@ -22,7 +24,7 @@ query_params = {
     "nace_r2": "D",        # Energy sector
     "s_adj": "SA",  
     "sinceTimePeriod" : "2024",
-    "geo" : "DE"
+    "geo" : ""
 }
 
 # define new dlt pipeline
@@ -72,11 +74,13 @@ def main(url_catalogue, file_name, dataset_name):
     extract(url_catalogue, file_name)
     table_codes = parse_xml(file_name,dataset_name)
     selected_codes = table_codes[:2]
-    for code in selected_codes:
-        resource = make_eu_prod_resource(query_params, code)
-        load_info = pipeline.run(resource, loader_file_format="parquet", write_disposition="replace")
-        print(f"Loaded dataset: {code}")
-        print(load_info)
+    for country in country_list:
+        query_params['geo'] = country
+        for code in selected_codes:
+            resource = make_eu_prod_resource(query_params, code)
+            load_info = pipeline.run(resource, loader_file_format="parquet", write_disposition="replace")
+            print(f"Loaded dataset: {code}")
+            print(load_info)
 
 
 if __name__ == '__main__':
