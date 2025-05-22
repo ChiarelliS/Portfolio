@@ -23,7 +23,7 @@ An end-to-end ELT pipeline that automates the extraction of financial data submi
 - Data modeling and transformation with dbt  
 - Cloud data warehousing concepts
 
-## :factory: [Project 2 - Monthly Industry Data Extraction From Eurostat Database](https://github.com/ChiarelliS/Portfolio/tree/main/Project2) -- Work in Progress --
+## :factory: [Project 2 - Monthly Industry Data Extraction From Eurostat Database](https://github.com/ChiarelliS/Portfolio/tree/main/Project2) - Work in Progress -
 An automated data pipeline to collect monthly industry data from the Eurostat database. The pipeline cleans and processes raw data, uploads structured tables to cloud storage, and performs transformations to prepare the data for business intelligence (BI) analysis.
 
 ### 🔧 Tech Stack
